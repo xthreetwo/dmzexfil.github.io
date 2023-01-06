@@ -1,0 +1,1189 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>DMZ exfil hub</title>
+    <meta name="description" content="DMZexfil">
+    <meta name="author" content="xthreetwo">
+
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <script type="text/javascript" src="script.js"></script>
+
+</head>
+
+<body>
+    <header class="auto-grid">
+        <div class="header">
+            <span class="logo">DMZ<span class="highlight">EXFIL</span></span>
+            <span class="extras">
+                <span onclick="document.getElementById('b21Modal').style.display='block'">BUILDING 21</span>
+                <span onclick="document.getElementById('aboutModal').style.display='block'">ABOUT</span>
+            </span>
+        </div>
+    </header>
+
+    <div class="auto-grid">
+        <!-- MY MISSIONS -->
+        <div class="grid-element">
+            <div class="form mine">
+                MY MISSIONS
+            </div>
+            <div  class="mission">
+                <select id="mission1-select" onchange="swapMission1(this)">
+                    <option value="null">Select Mission</option>
+                        <optgroup label="LEGION">
+                            <option value="Al-Qatala Informant">Al-Qatala Informant</option>
+                            <option value="All Clear">All Clear</option>
+                            <option value="All Fired Up">All Fired Up</option>
+                            <option value="Anti-Air">Anti-Air</option>
+                            <option value="Battle Rivals">Battle Rivals</option>
+                            <option value="Big Spender">Big Spender</option>
+                            <option value="Buried Barrels">Buried Barrels</option>
+                            <option value="Commanding Intel">Commanding Intel</option>
+                            <option value="Contractual Obligations">Contractual Obligations</option>
+                            <option value="Data Collection">Data Collection</option>
+                            <option value="Dead Drop">Dead Drop</option>
+                            <option value="Fort Scout">Fort Scout</option>
+                            <option value="Frame Job">Frame Job</option>
+                            <option value="Good Fortune">Good Fortune</option>
+                            <option value="Good Prep">Good Prep</option>
+                            <option value="Intelligence Control">Intelligence Control</option>
+                            <option value="Joy Ride">Joy Ride</option>
+                            <option value="Junker">Junker</option>
+                            <option value="Junkyard">Junkyard</option>
+                            <option value="Key Elimination">Key Elimination</option>
+                            <option value="Last Minute Evac">Last Minute Evac</option>
+                            <option value="Locate and Scavenge">Locate and Scavenge</option>
+                            <option value="Make Contact">Make Contact</option>
+                            <option value="Mechanic">Mechanic</option>
+                            <option value="Nail in the Coffin">Nail in the Coffin</option>
+                            <option value="No Rushing">No Rushing</option>
+                            <option value="Poisoned Well">Poisoned Well</option>
+                            <option value="Pyromaniac">Pyromaniac</option>
+                            <option value="Recon Flyover">Recon Flyover</option>
+                            <option value="Storm the Stronghold">Storm the Stronghold</option>
+                            <option value="Tactical Extraction">Tactical Extraction</option>
+                            <option value="Thirst For Knowledge">Thirst For Knowledge</option>
+                        </optgroup>
+                        <optgroup label="WHITE LOTUS">
+                            <option value="Air Supremacy">Air Supremacy</option>
+                            <option value="Badge of Honor">Badge of Honor</option>
+                            <option value="Bag ‘Em and Tag ‘Em">Bag ‘Em and Tag ‘Em</option>
+                            <option value="Bombing Run">Bombing Run</option>
+                            <option value="Caved In">Caved In</option>
+                            <option value="Clean House">Clean House</option>
+                            <option value="Close Quarters">Close Quarters</option>
+                            <option value="Convenience">Convenience</option>
+                            <option value="Cover No Concealment">Cover No Concealment</option>
+                            <option value="Deadlines">Deadlines</option>
+                            <option value="Death From Above">Death From Above</option>
+                            <option value="Demolitions">Demolitions</option>
+                            <option value="Fast and Strong">Fast and Strong</option>
+                            <option value="Flight Recon">Flight Recon</option>
+                            <option value="Fully Encumbered">Fully Encumbered</option>
+                            <option value="Grenade Supplier">Grenade Supplier</option>
+                            <option value="Health Conscious">Health Conscious</option>
+                            <option value="Heavy Gunner">Heavy Gunner</option>
+                            <option value="Hero Run">Hero Run</option>
+                            <option value="Hit and Run">Hit and Run</option>
+                            <option value="Hostage Rescue">Hostage Rescue</option>
+                            <option value="Humanitarian Relief">Humanitarian Relief</option>
+                            <option value="Intel Executed">Intel Executed</option>
+                            <option value="Mall Rat">Mall Rat</option>
+                            <option value="Massive Stock">Massive Stock</option>
+                            <option value="Medical Mule">Medical Mule</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Robin Hood">Robin Hood</option>
+                            <option value="Supply Drop">Supply Drop</option>
+                            <option value="The Route Forward">The Route Forward</option>
+                            <option value="Two Birds">Two Birds</option>
+                            <option value="Unearthed">Unearthed</option>
+                            <option value="Weight Limit">Weight Limit</option>
+                            <option value="World Traveler">World Traveler</option>
+                        </optgroup>
+                        <optgroup label="BLACK MOUS">
+                            <option value="Always Listening">Always Listening</option>
+                            <option value="Based">Based</option>
+                            <option value="Breaking and Entering">Breaking and Entering</option>
+                            <option value="Bullfighter">Bullfighter</option>
+                            <option value="Cargo Keeper">Cargo Keeper</option>
+                            <option value="Custom Hardware">Custom Hardware</option>
+                            <option value="Down and Out">Down and Out</option>
+                            <option value="Espionage">Espionage</option>
+                            <option value="Eye in the Sky">Eye in the Sky</option>
+                            <option value="Flight Plans">Flight Plans</option>
+                            <option value="Harmful Waves">Harmful Waves</option>
+                            <option value="Hunting Party">Hunting Party</option>
+                            <option value="Information Overload">Information Overload</option>
+                            <option value="Kennel">Kennel</option>
+                            <option value="Natural Treasure">Natural Treasure</option>
+                            <option value="On Rails">On Rails</option>
+                            <option value="One Man Army">One Man Army</option>
+                            <option value="Paper Shredder">Paper Shredder</option>
+                            <option value="Perfection">Perfection</option>
+                            <option value="Quick and Dirty">Quick and Dirty</option>
+                            <option value="Roof Rat">Roof Rat</option>
+                            <option value="Silent and Deadly">Silent and Deadly</option>
+                            <option value="Silent Killer">Silent Killer</option>
+                            <option value="Team Player">Team Player</option>
+                            <option value="The Client is King">The Client is King</option>
+                            <option value="The Golden Rule">The Golden Rule</option>
+                            <option value="The Whale">The Whale</option>
+                            <option value="Unarmed and Dangerous">Unarmed and Dangerous</option>
+                            <option value="Vintage Collection">Vintage Collection</option>
+                            <option value="Vintage Connoisseur">Vintage Connoisseur</option>
+                            <option value="Weapons Case">Weapons Case</option>
+                            <option value="Weapons Chase">Weapons Chase</option>
+                            <option value="Weapons Research">Weapons Research</option>
+                            <option value="Who’s Watching">Who’s Watching</option>
+                            <option value="Without a Trace">Without a Trace</option>
+                        </optgroup>
+                </select>
+                <div id="mission1" class="d-none">
+                    <div id="mission1-header" class="title">
+                        <span id="mission1-faction" class="material-symbols-rounded"></span>
+                        <span id="mission1-title"></span>
+                        <button class="close-mission" aria-label="Close Mission" title="Close Mission" onclick="closeMission1()">close</button>
+                    </div>
+                    <p id="mission1-task1" class="list"></p>
+                    <p id="mission1-task2" class="list"></p>
+                    <p id="mission1-task3" class="list"></p>
+                </div>
+            </div>
+            <div class="mission">
+                <select id="mission2-select" onchange="swapMission2(this)">
+                    <option value="null">Select Mission</option>
+                        <optgroup label="LEGION">
+                            <option value="Al-Qatala Informant">Al-Qatala Informant</option>
+                            <option value="All Clear">All Clear</option>
+                            <option value="All Fired Up">All Fired Up</option>
+                            <option value="Anti-Air">Anti-Air</option>
+                            <option value="Battle Rivals">Battle Rivals</option>
+                            <option value="Big Spender">Big Spender</option>
+                            <option value="Buried Barrels">Buried Barrels</option>
+                            <option value="Commanding Intel">Commanding Intel</option>
+                            <option value="Contractual Obligations">Contractual Obligations</option>
+                            <option value="Data Collection">Data Collection</option>
+                            <option value="Dead Drop">Dead Drop</option>
+                            <option value="Fort Scout">Fort Scout</option>
+                            <option value="Frame Job">Frame Job</option>
+                            <option value="Good Fortune">Good Fortune</option>
+                            <option value="Good Prep">Good Prep</option>
+                            <option value="Intelligence Control">Intelligence Control</option>
+                            <option value="Joy Ride">Joy Ride</option>
+                            <option value="Junker">Junker</option>
+                            <option value="Junkyard">Junkyard</option>
+                            <option value="Key Elimination">Key Elimination</option>
+                            <option value="Last Minute Evac">Last Minute Evac</option>
+                            <option value="Locate and Scavenge">Locate and Scavenge</option>
+                            <option value="Make Contact">Make Contact</option>
+                            <option value="Mechanic">Mechanic</option>
+                            <option value="Nail in the Coffin">Nail in the Coffin</option>
+                            <option value="No Rushing">No Rushing</option>
+                            <option value="Poisoned Well">Poisoned Well</option>
+                            <option value="Pyromaniac">Pyromaniac</option>
+                            <option value="Recon Flyover">Recon Flyover</option>
+                            <option value="Storm the Stronghold">Storm the Stronghold</option>
+                            <option value="Tactical Extraction">Tactical Extraction</option>
+                            <option value="Thirst For Knowledge">Thirst For Knowledge</option>
+                        </optgroup>
+                        <optgroup label="WHITE LOTUS">
+                            <option value="Air Supremacy">Air Supremacy</option>
+                            <option value="Badge of Honor">Badge of Honor</option>
+                            <option value="Bag ‘Em and Tag ‘Em">Bag ‘Em and Tag ‘Em</option>
+                            <option value="Bombing Run">Bombing Run</option>
+                            <option value="Caved In">Caved In</option>
+                            <option value="Clean House">Clean House</option>
+                            <option value="Close Quarters">Close Quarters</option>
+                            <option value="Convenience">Convenience</option>
+                            <option value="Cover No Concealment">Cover No Concealment</option>
+                            <option value="Deadlines">Deadlines</option>
+                            <option value="Death From Above">Death From Above</option>
+                            <option value="Demolitions">Demolitions</option>
+                            <option value="Fast and Strong">Fast and Strong</option>
+                            <option value="Flight Recon">Flight Recon</option>
+                            <option value="Fully Encumbered">Fully Encumbered</option>
+                            <option value="Grenade Supplier">Grenade Supplier</option>
+                            <option value="Health Conscious">Health Conscious</option>
+                            <option value="Heavy Gunner">Heavy Gunner</option>
+                            <option value="Hero Run">Hero Run</option>
+                            <option value="Hit and Run">Hit and Run</option>
+                            <option value="Hostage Rescue">Hostage Rescue</option>
+                            <option value="Humanitarian Relief">Humanitarian Relief</option>
+                            <option value="Intel Executed">Intel Executed</option>
+                            <option value="Mall Rat">Mall Rat</option>
+                            <option value="Massive Stock">Massive Stock</option>
+                            <option value="Medical Mule">Medical Mule</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Robin Hood">Robin Hood</option>
+                            <option value="Supply Drop">Supply Drop</option>
+                            <option value="The Route Forward">The Route Forward</option>
+                            <option value="Two Birds">Two Birds</option>
+                            <option value="Unearthed">Unearthed</option>
+                            <option value="Weight Limit">Weight Limit</option>
+                            <option value="World Traveler">World Traveler</option>
+                        </optgroup>
+                        <optgroup label="BLACK MOUS">
+                            <option value="Always Listening">Always Listening</option>
+                            <option value="Based">Based</option>
+                            <option value="Breaking and Entering">Breaking and Entering</option>
+                            <option value="Bullfighter">Bullfighter</option>
+                            <option value="Cargo Keeper">Cargo Keeper</option>
+                            <option value="Custom Hardware">Custom Hardware</option>
+                            <option value="Down and Out">Down and Out</option>
+                            <option value="Espionage">Espionage</option>
+                            <option value="Eye in the Sky">Eye in the Sky</option>
+                            <option value="Flight Plans">Flight Plans</option>
+                            <option value="Harmful Waves">Harmful Waves</option>
+                            <option value="Hunting Party">Hunting Party</option>
+                            <option value="Information Overload">Information Overload</option>
+                            <option value="Kennel">Kennel</option>
+                            <option value="Natural Treasure">Natural Treasure</option>
+                            <option value="On Rails">On Rails</option>
+                            <option value="One Man Army">One Man Army</option>
+                            <option value="Paper Shredder">Paper Shredder</option>
+                            <option value="Perfection">Perfection</option>
+                            <option value="Quick and Dirty">Quick and Dirty</option>
+                            <option value="Roof Rat">Roof Rat</option>
+                            <option value="Silent and Deadly">Silent and Deadly</option>
+                            <option value="Silent Killer">Silent Killer</option>
+                            <option value="Team Player">Team Player</option>
+                            <option value="The Client is King">The Client is King</option>
+                            <option value="The Golden Rule">The Golden Rule</option>
+                            <option value="The Whale">The Whale</option>
+                            <option value="Unarmed and Dangerous">Unarmed and Dangerous</option>
+                            <option value="Vintage Collection">Vintage Collection</option>
+                            <option value="Vintage Connoisseur">Vintage Connoisseur</option>
+                            <option value="Weapons Case">Weapons Case</option>
+                            <option value="Weapons Chase">Weapons Chase</option>
+                            <option value="Weapons Research">Weapons Research</option>
+                            <option value="Who’s Watching">Who’s Watching</option>
+                            <option value="Without a Trace">Without a Trace</option>
+                        </optgroup>
+                </select>
+                <div id="mission2" class="d-none">
+                    <div id="mission2-header" class="title">
+                        <span id="mission2-faction" class="material-symbols-rounded"></span>
+                        <span id="mission2-title"></span>
+                        <button class="close-mission" aria-label="Close Mission" title="Close Mission" onclick="closeMission2()">close</button>
+                    </div>
+                    <p id="mission2-task1" class="list"></p>
+                    <p id="mission2-task2" class="list"></p>
+                    <p id="mission2-task3" class="list"></p>
+                </div>
+            </div>
+            <div class="mission">
+                <select id="mission3-select" onchange="swapMission3(this)">
+                    <option value="null">Select Mission</option>
+                        <optgroup label="LEGION">
+                            <option value="Al-Qatala Informant">Al-Qatala Informant</option>
+                            <option value="All Clear">All Clear</option>
+                            <option value="All Fired Up">All Fired Up</option>
+                            <option value="Anti-Air">Anti-Air</option>
+                            <option value="Battle Rivals">Battle Rivals</option>
+                            <option value="Big Spender">Big Spender</option>
+                            <option value="Buried Barrels">Buried Barrels</option>
+                            <option value="Commanding Intel">Commanding Intel</option>
+                            <option value="Contractual Obligations">Contractual Obligations</option>
+                            <option value="Data Collection">Data Collection</option>
+                            <option value="Dead Drop">Dead Drop</option>
+                            <option value="Fort Scout">Fort Scout</option>
+                            <option value="Frame Job">Frame Job</option>
+                            <option value="Good Fortune">Good Fortune</option>
+                            <option value="Good Prep">Good Prep</option>
+                            <option value="Intelligence Control">Intelligence Control</option>
+                            <option value="Joy Ride">Joy Ride</option>
+                            <option value="Junker">Junker</option>
+                            <option value="Junkyard">Junkyard</option>
+                            <option value="Key Elimination">Key Elimination</option>
+                            <option value="Last Minute Evac">Last Minute Evac</option>
+                            <option value="Locate and Scavenge">Locate and Scavenge</option>
+                            <option value="Make Contact">Make Contact</option>
+                            <option value="Mechanic">Mechanic</option>
+                            <option value="Nail in the Coffin">Nail in the Coffin</option>
+                            <option value="No Rushing">No Rushing</option>
+                            <option value="Poisoned Well">Poisoned Well</option>
+                            <option value="Pyromaniac">Pyromaniac</option>
+                            <option value="Recon Flyover">Recon Flyover</option>
+                            <option value="Storm the Stronghold">Storm the Stronghold</option>
+                            <option value="Tactical Extraction">Tactical Extraction</option>
+                            <option value="Thirst For Knowledge">Thirst For Knowledge</option>
+                        </optgroup>
+                        <optgroup label="WHITE LOTUS">
+                            <option value="Air Supremacy">Air Supremacy</option>
+                            <option value="Badge of Honor">Badge of Honor</option>
+                            <option value="Bag ‘Em and Tag ‘Em">Bag ‘Em and Tag ‘Em</option>
+                            <option value="Bombing Run">Bombing Run</option>
+                            <option value="Caved In">Caved In</option>
+                            <option value="Clean House">Clean House</option>
+                            <option value="Close Quarters">Close Quarters</option>
+                            <option value="Convenience">Convenience</option>
+                            <option value="Cover No Concealment">Cover No Concealment</option>
+                            <option value="Deadlines">Deadlines</option>
+                            <option value="Death From Above">Death From Above</option>
+                            <option value="Demolitions">Demolitions</option>
+                            <option value="Fast and Strong">Fast and Strong</option>
+                            <option value="Flight Recon">Flight Recon</option>
+                            <option value="Fully Encumbered">Fully Encumbered</option>
+                            <option value="Grenade Supplier">Grenade Supplier</option>
+                            <option value="Health Conscious">Health Conscious</option>
+                            <option value="Heavy Gunner">Heavy Gunner</option>
+                            <option value="Hero Run">Hero Run</option>
+                            <option value="Hit and Run">Hit and Run</option>
+                            <option value="Hostage Rescue">Hostage Rescue</option>
+                            <option value="Humanitarian Relief">Humanitarian Relief</option>
+                            <option value="Intel Executed">Intel Executed</option>
+                            <option value="Mall Rat">Mall Rat</option>
+                            <option value="Massive Stock">Massive Stock</option>
+                            <option value="Medical Mule">Medical Mule</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Robin Hood">Robin Hood</option>
+                            <option value="Supply Drop">Supply Drop</option>
+                            <option value="The Route Forward">The Route Forward</option>
+                            <option value="Two Birds">Two Birds</option>
+                            <option value="Unearthed">Unearthed</option>
+                            <option value="Weight Limit">Weight Limit</option>
+                            <option value="World Traveler">World Traveler</option>
+                        </optgroup>
+                        <optgroup label="BLACK MOUS">
+                            <option value="Always Listening">Always Listening</option>
+                            <option value="Based">Based</option>
+                            <option value="Breaking and Entering">Breaking and Entering</option>
+                            <option value="Bullfighter">Bullfighter</option>
+                            <option value="Cargo Keeper">Cargo Keeper</option>
+                            <option value="Custom Hardware">Custom Hardware</option>
+                            <option value="Down and Out">Down and Out</option>
+                            <option value="Espionage">Espionage</option>
+                            <option value="Eye in the Sky">Eye in the Sky</option>
+                            <option value="Flight Plans">Flight Plans</option>
+                            <option value="Harmful Waves">Harmful Waves</option>
+                            <option value="Hunting Party">Hunting Party</option>
+                            <option value="Information Overload">Information Overload</option>
+                            <option value="Kennel">Kennel</option>
+                            <option value="Natural Treasure">Natural Treasure</option>
+                            <option value="On Rails">On Rails</option>
+                            <option value="One Man Army">One Man Army</option>
+                            <option value="Paper Shredder">Paper Shredder</option>
+                            <option value="Perfection">Perfection</option>
+                            <option value="Quick and Dirty">Quick and Dirty</option>
+                            <option value="Roof Rat">Roof Rat</option>
+                            <option value="Silent and Deadly">Silent and Deadly</option>
+                            <option value="Silent Killer">Silent Killer</option>
+                            <option value="Team Player">Team Player</option>
+                            <option value="The Client is King">The Client is King</option>
+                            <option value="The Golden Rule">The Golden Rule</option>
+                            <option value="The Whale">The Whale</option>
+                            <option value="Unarmed and Dangerous">Unarmed and Dangerous</option>
+                            <option value="Vintage Collection">Vintage Collection</option>
+                            <option value="Vintage Connoisseur">Vintage Connoisseur</option>
+                            <option value="Weapons Case">Weapons Case</option>
+                            <option value="Weapons Chase">Weapons Chase</option>
+                            <option value="Weapons Research">Weapons Research</option>
+                            <option value="Who’s Watching">Who’s Watching</option>
+                            <option value="Without a Trace">Without a Trace</option>
+                        </optgroup>
+                </select>
+                <div id="mission3" class="d-none">
+                    <div id="mission3-header" class="title">
+                        <span id="mission3-faction" class="material-symbols-rounded"></span>
+                        <span id="mission3-title"></span>
+                        <button class="close-mission" aria-label="Close Mission" title="Close Mission" onclick="closeMission3()">close</button>
+                    </div>
+                    <p id="mission3-task1" class="list"></p>
+                    <p id="mission3-task2" class="list"></p>
+                    <p id="mission3-task3" class="list"></p>
+                </div>
+            </div>
+        </div>
+        <div class="grid-element">
+            <div class="form">
+                <input type="text" class="form_input" placeholder="teammate 1">
+            </div>
+            <div  class="mission">
+                <select id="mission4-select" onchange="swapMission4(this)">
+                    <option value="null">Select Mission</option>
+                        <optgroup label="LEGION">
+                            <option value="Al-Qatala Informant">Al-Qatala Informant</option>
+                            <option value="All Clear">All Clear</option>
+                            <option value="All Fired Up">All Fired Up</option>
+                            <option value="Anti-Air">Anti-Air</option>
+                            <option value="Battle Rivals">Battle Rivals</option>
+                            <option value="Big Spender">Big Spender</option>
+                            <option value="Buried Barrels">Buried Barrels</option>
+                            <option value="Commanding Intel">Commanding Intel</option>
+                            <option value="Contractual Obligations">Contractual Obligations</option>
+                            <option value="Data Collection">Data Collection</option>
+                            <option value="Dead Drop">Dead Drop</option>
+                            <option value="Fort Scout">Fort Scout</option>
+                            <option value="Frame Job">Frame Job</option>
+                            <option value="Good Fortune">Good Fortune</option>
+                            <option value="Good Prep">Good Prep</option>
+                            <option value="Intelligence Control">Intelligence Control</option>
+                            <option value="Joy Ride">Joy Ride</option>
+                            <option value="Junker">Junker</option>
+                            <option value="Junkyard">Junkyard</option>
+                            <option value="Key Elimination">Key Elimination</option>
+                            <option value="Last Minute Evac">Last Minute Evac</option>
+                            <option value="Locate and Scavenge">Locate and Scavenge</option>
+                            <option value="Make Contact">Make Contact</option>
+                            <option value="Mechanic">Mechanic</option>
+                            <option value="Nail in the Coffin">Nail in the Coffin</option>
+                            <option value="No Rushing">No Rushing</option>
+                            <option value="Poisoned Well">Poisoned Well</option>
+                            <option value="Pyromaniac">Pyromaniac</option>
+                            <option value="Recon Flyover">Recon Flyover</option>
+                            <option value="Storm the Stronghold">Storm the Stronghold</option>
+                            <option value="Tactical Extraction">Tactical Extraction</option>
+                            <option value="Thirst For Knowledge">Thirst For Knowledge</option>
+                        </optgroup>
+                        <optgroup label="WHITE LOTUS">
+                            <option value="Air Supremacy">Air Supremacy</option>
+                            <option value="Badge of Honor">Badge of Honor</option>
+                            <option value="Bag ‘Em and Tag ‘Em">Bag ‘Em and Tag ‘Em</option>
+                            <option value="Bombing Run">Bombing Run</option>
+                            <option value="Caved In">Caved In</option>
+                            <option value="Clean House">Clean House</option>
+                            <option value="Close Quarters">Close Quarters</option>
+                            <option value="Convenience">Convenience</option>
+                            <option value="Cover No Concealment">Cover No Concealment</option>
+                            <option value="Deadlines">Deadlines</option>
+                            <option value="Death From Above">Death From Above</option>
+                            <option value="Demolitions">Demolitions</option>
+                            <option value="Fast and Strong">Fast and Strong</option>
+                            <option value="Flight Recon">Flight Recon</option>
+                            <option value="Fully Encumbered">Fully Encumbered</option>
+                            <option value="Grenade Supplier">Grenade Supplier</option>
+                            <option value="Health Conscious">Health Conscious</option>
+                            <option value="Heavy Gunner">Heavy Gunner</option>
+                            <option value="Hero Run">Hero Run</option>
+                            <option value="Hit and Run">Hit and Run</option>
+                            <option value="Hostage Rescue">Hostage Rescue</option>
+                            <option value="Humanitarian Relief">Humanitarian Relief</option>
+                            <option value="Intel Executed">Intel Executed</option>
+                            <option value="Mall Rat">Mall Rat</option>
+                            <option value="Massive Stock">Massive Stock</option>
+                            <option value="Medical Mule">Medical Mule</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Robin Hood">Robin Hood</option>
+                            <option value="Supply Drop">Supply Drop</option>
+                            <option value="The Route Forward">The Route Forward</option>
+                            <option value="Two Birds">Two Birds</option>
+                            <option value="Unearthed">Unearthed</option>
+                            <option value="Weight Limit">Weight Limit</option>
+                            <option value="World Traveler">World Traveler</option>
+                        </optgroup>
+                        <optgroup label="BLACK MOUS">
+                            <option value="Always Listening">Always Listening</option>
+                            <option value="Based">Based</option>
+                            <option value="Breaking and Entering">Breaking and Entering</option>
+                            <option value="Bullfighter">Bullfighter</option>
+                            <option value="Cargo Keeper">Cargo Keeper</option>
+                            <option value="Custom Hardware">Custom Hardware</option>
+                            <option value="Down and Out">Down and Out</option>
+                            <option value="Espionage">Espionage</option>
+                            <option value="Eye in the Sky">Eye in the Sky</option>
+                            <option value="Flight Plans">Flight Plans</option>
+                            <option value="Harmful Waves">Harmful Waves</option>
+                            <option value="Hunting Party">Hunting Party</option>
+                            <option value="Information Overload">Information Overload</option>
+                            <option value="Kennel">Kennel</option>
+                            <option value="Natural Treasure">Natural Treasure</option>
+                            <option value="On Rails">On Rails</option>
+                            <option value="One Man Army">One Man Army</option>
+                            <option value="Paper Shredder">Paper Shredder</option>
+                            <option value="Perfection">Perfection</option>
+                            <option value="Quick and Dirty">Quick and Dirty</option>
+                            <option value="Roof Rat">Roof Rat</option>
+                            <option value="Silent and Deadly">Silent and Deadly</option>
+                            <option value="Silent Killer">Silent Killer</option>
+                            <option value="Team Player">Team Player</option>
+                            <option value="The Client is King">The Client is King</option>
+                            <option value="The Golden Rule">The Golden Rule</option>
+                            <option value="The Whale">The Whale</option>
+                            <option value="Unarmed and Dangerous">Unarmed and Dangerous</option>
+                            <option value="Vintage Collection">Vintage Collection</option>
+                            <option value="Vintage Connoisseur">Vintage Connoisseur</option>
+                            <option value="Weapons Case">Weapons Case</option>
+                            <option value="Weapons Chase">Weapons Chase</option>
+                            <option value="Weapons Research">Weapons Research</option>
+                            <option value="Who’s Watching">Who’s Watching</option>
+                            <option value="Without a Trace">Without a Trace</option>
+                        </optgroup>
+                </select>
+                <div id="mission4" class="d-none">
+                    <div id="mission4-header" class="title">
+                        <span id="mission4-faction" class="material-symbols-rounded"></span>
+                        <span id="mission4-title"></span>
+                        <button class="close-mission" aria-label="Close Mission" title="Close Mission" onclick="closeMission4()">close</button>
+                    </div>
+                    <p id="mission4-task1" class="list"></p>
+                    <p id="mission4-task2" class="list"></p>
+                    <p id="mission4-task3" class="list"></p>
+                </div>
+            </div>
+            <div class="mission">
+                <select id="mission5-select" onchange="swapMission5(this)">
+                    <option value="null">Select Mission</option>
+                        <optgroup label="LEGION">
+                            <option value="Al-Qatala Informant">Al-Qatala Informant</option>
+                            <option value="All Clear">All Clear</option>
+                            <option value="All Fired Up">All Fired Up</option>
+                            <option value="Anti-Air">Anti-Air</option>
+                            <option value="Battle Rivals">Battle Rivals</option>
+                            <option value="Big Spender">Big Spender</option>
+                            <option value="Buried Barrels">Buried Barrels</option>
+                            <option value="Commanding Intel">Commanding Intel</option>
+                            <option value="Contractual Obligations">Contractual Obligations</option>
+                            <option value="Data Collection">Data Collection</option>
+                            <option value="Dead Drop">Dead Drop</option>
+                            <option value="Fort Scout">Fort Scout</option>
+                            <option value="Frame Job">Frame Job</option>
+                            <option value="Good Fortune">Good Fortune</option>
+                            <option value="Good Prep">Good Prep</option>
+                            <option value="Intelligence Control">Intelligence Control</option>
+                            <option value="Joy Ride">Joy Ride</option>
+                            <option value="Junker">Junker</option>
+                            <option value="Junkyard">Junkyard</option>
+                            <option value="Key Elimination">Key Elimination</option>
+                            <option value="Last Minute Evac">Last Minute Evac</option>
+                            <option value="Locate and Scavenge">Locate and Scavenge</option>
+                            <option value="Make Contact">Make Contact</option>
+                            <option value="Mechanic">Mechanic</option>
+                            <option value="Nail in the Coffin">Nail in the Coffin</option>
+                            <option value="No Rushing">No Rushing</option>
+                            <option value="Poisoned Well">Poisoned Well</option>
+                            <option value="Pyromaniac">Pyromaniac</option>
+                            <option value="Recon Flyover">Recon Flyover</option>
+                            <option value="Storm the Stronghold">Storm the Stronghold</option>
+                            <option value="Tactical Extraction">Tactical Extraction</option>
+                            <option value="Thirst For Knowledge">Thirst For Knowledge</option>
+                        </optgroup>
+                        <optgroup label="WHITE LOTUS">
+                            <option value="Air Supremacy">Air Supremacy</option>
+                            <option value="Badge of Honor">Badge of Honor</option>
+                            <option value="Bag ‘Em and Tag ‘Em">Bag ‘Em and Tag ‘Em</option>
+                            <option value="Bombing Run">Bombing Run</option>
+                            <option value="Caved In">Caved In</option>
+                            <option value="Clean House">Clean House</option>
+                            <option value="Close Quarters">Close Quarters</option>
+                            <option value="Convenience">Convenience</option>
+                            <option value="Cover No Concealment">Cover No Concealment</option>
+                            <option value="Deadlines">Deadlines</option>
+                            <option value="Death From Above">Death From Above</option>
+                            <option value="Demolitions">Demolitions</option>
+                            <option value="Fast and Strong">Fast and Strong</option>
+                            <option value="Flight Recon">Flight Recon</option>
+                            <option value="Fully Encumbered">Fully Encumbered</option>
+                            <option value="Grenade Supplier">Grenade Supplier</option>
+                            <option value="Health Conscious">Health Conscious</option>
+                            <option value="Heavy Gunner">Heavy Gunner</option>
+                            <option value="Hero Run">Hero Run</option>
+                            <option value="Hit and Run">Hit and Run</option>
+                            <option value="Hostage Rescue">Hostage Rescue</option>
+                            <option value="Humanitarian Relief">Humanitarian Relief</option>
+                            <option value="Intel Executed">Intel Executed</option>
+                            <option value="Mall Rat">Mall Rat</option>
+                            <option value="Massive Stock">Massive Stock</option>
+                            <option value="Medical Mule">Medical Mule</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Robin Hood">Robin Hood</option>
+                            <option value="Supply Drop">Supply Drop</option>
+                            <option value="The Route Forward">The Route Forward</option>
+                            <option value="Two Birds">Two Birds</option>
+                            <option value="Unearthed">Unearthed</option>
+                            <option value="Weight Limit">Weight Limit</option>
+                            <option value="World Traveler">World Traveler</option>
+                        </optgroup>
+                        <optgroup label="BLACK MOUS">
+                            <option value="Always Listening">Always Listening</option>
+                            <option value="Based">Based</option>
+                            <option value="Breaking and Entering">Breaking and Entering</option>
+                            <option value="Bullfighter">Bullfighter</option>
+                            <option value="Cargo Keeper">Cargo Keeper</option>
+                            <option value="Custom Hardware">Custom Hardware</option>
+                            <option value="Down and Out">Down and Out</option>
+                            <option value="Espionage">Espionage</option>
+                            <option value="Eye in the Sky">Eye in the Sky</option>
+                            <option value="Flight Plans">Flight Plans</option>
+                            <option value="Harmful Waves">Harmful Waves</option>
+                            <option value="Hunting Party">Hunting Party</option>
+                            <option value="Information Overload">Information Overload</option>
+                            <option value="Kennel">Kennel</option>
+                            <option value="Natural Treasure">Natural Treasure</option>
+                            <option value="On Rails">On Rails</option>
+                            <option value="One Man Army">One Man Army</option>
+                            <option value="Paper Shredder">Paper Shredder</option>
+                            <option value="Perfection">Perfection</option>
+                            <option value="Quick and Dirty">Quick and Dirty</option>
+                            <option value="Roof Rat">Roof Rat</option>
+                            <option value="Silent and Deadly">Silent and Deadly</option>
+                            <option value="Silent Killer">Silent Killer</option>
+                            <option value="Team Player">Team Player</option>
+                            <option value="The Client is King">The Client is King</option>
+                            <option value="The Golden Rule">The Golden Rule</option>
+                            <option value="The Whale">The Whale</option>
+                            <option value="Unarmed and Dangerous">Unarmed and Dangerous</option>
+                            <option value="Vintage Collection">Vintage Collection</option>
+                            <option value="Vintage Connoisseur">Vintage Connoisseur</option>
+                            <option value="Weapons Case">Weapons Case</option>
+                            <option value="Weapons Chase">Weapons Chase</option>
+                            <option value="Weapons Research">Weapons Research</option>
+                            <option value="Who’s Watching">Who’s Watching</option>
+                            <option value="Without a Trace">Without a Trace</option>
+                        </optgroup>
+                </select>
+                <div id="mission5" class="d-none">
+                    <div id="mission5-header" class="title">
+                        <span id="mission5-faction" class="material-symbols-rounded"></span>
+                        <span id="mission5-title"></span>
+                        <button class="close-mission" aria-label="Close Mission" title="Close Mission" onclick="closeMission5()">close</button>
+                    </div>
+                    <p id="mission5-task1" class="list"></p>
+                    <p id="mission5-task2" class="list"></p>
+                    <p id="mission5-task3" class="list"></p>
+                </div>
+            </div>
+            <div class="mission">
+                <select id="mission6-select" onchange="swapMission6(this)">
+                    <option value="null">Select Mission</option>
+                        <optgroup label="LEGION">
+                            <option value="Al-Qatala Informant">Al-Qatala Informant</option>
+                            <option value="All Clear">All Clear</option>
+                            <option value="All Fired Up">All Fired Up</option>
+                            <option value="Anti-Air">Anti-Air</option>
+                            <option value="Battle Rivals">Battle Rivals</option>
+                            <option value="Big Spender">Big Spender</option>
+                            <option value="Buried Barrels">Buried Barrels</option>
+                            <option value="Commanding Intel">Commanding Intel</option>
+                            <option value="Contractual Obligations">Contractual Obligations</option>
+                            <option value="Data Collection">Data Collection</option>
+                            <option value="Dead Drop">Dead Drop</option>
+                            <option value="Fort Scout">Fort Scout</option>
+                            <option value="Frame Job">Frame Job</option>
+                            <option value="Good Fortune">Good Fortune</option>
+                            <option value="Good Prep">Good Prep</option>
+                            <option value="Intelligence Control">Intelligence Control</option>
+                            <option value="Joy Ride">Joy Ride</option>
+                            <option value="Junker">Junker</option>
+                            <option value="Junkyard">Junkyard</option>
+                            <option value="Key Elimination">Key Elimination</option>
+                            <option value="Last Minute Evac">Last Minute Evac</option>
+                            <option value="Locate and Scavenge">Locate and Scavenge</option>
+                            <option value="Make Contact">Make Contact</option>
+                            <option value="Mechanic">Mechanic</option>
+                            <option value="Nail in the Coffin">Nail in the Coffin</option>
+                            <option value="No Rushing">No Rushing</option>
+                            <option value="Poisoned Well">Poisoned Well</option>
+                            <option value="Pyromaniac">Pyromaniac</option>
+                            <option value="Recon Flyover">Recon Flyover</option>
+                            <option value="Storm the Stronghold">Storm the Stronghold</option>
+                            <option value="Tactical Extraction">Tactical Extraction</option>
+                            <option value="Thirst For Knowledge">Thirst For Knowledge</option>
+                        </optgroup>
+                        <optgroup label="WHITE LOTUS">
+                            <option value="Air Supremacy">Air Supremacy</option>
+                            <option value="Badge of Honor">Badge of Honor</option>
+                            <option value="Bag ‘Em and Tag ‘Em">Bag ‘Em and Tag ‘Em</option>
+                            <option value="Bombing Run">Bombing Run</option>
+                            <option value="Caved In">Caved In</option>
+                            <option value="Clean House">Clean House</option>
+                            <option value="Close Quarters">Close Quarters</option>
+                            <option value="Convenience">Convenience</option>
+                            <option value="Cover No Concealment">Cover No Concealment</option>
+                            <option value="Deadlines">Deadlines</option>
+                            <option value="Death From Above">Death From Above</option>
+                            <option value="Demolitions">Demolitions</option>
+                            <option value="Fast and Strong">Fast and Strong</option>
+                            <option value="Flight Recon">Flight Recon</option>
+                            <option value="Fully Encumbered">Fully Encumbered</option>
+                            <option value="Grenade Supplier">Grenade Supplier</option>
+                            <option value="Health Conscious">Health Conscious</option>
+                            <option value="Heavy Gunner">Heavy Gunner</option>
+                            <option value="Hero Run">Hero Run</option>
+                            <option value="Hit and Run">Hit and Run</option>
+                            <option value="Hostage Rescue">Hostage Rescue</option>
+                            <option value="Humanitarian Relief">Humanitarian Relief</option>
+                            <option value="Intel Executed">Intel Executed</option>
+                            <option value="Mall Rat">Mall Rat</option>
+                            <option value="Massive Stock">Massive Stock</option>
+                            <option value="Medical Mule">Medical Mule</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Robin Hood">Robin Hood</option>
+                            <option value="Supply Drop">Supply Drop</option>
+                            <option value="The Route Forward">The Route Forward</option>
+                            <option value="Two Birds">Two Birds</option>
+                            <option value="Unearthed">Unearthed</option>
+                            <option value="Weight Limit">Weight Limit</option>
+                            <option value="World Traveler">World Traveler</option>
+                        </optgroup>
+                        <optgroup label="BLACK MOUS">
+                            <option value="Always Listening">Always Listening</option>
+                            <option value="Based">Based</option>
+                            <option value="Breaking and Entering">Breaking and Entering</option>
+                            <option value="Bullfighter">Bullfighter</option>
+                            <option value="Cargo Keeper">Cargo Keeper</option>
+                            <option value="Custom Hardware">Custom Hardware</option>
+                            <option value="Down and Out">Down and Out</option>
+                            <option value="Espionage">Espionage</option>
+                            <option value="Eye in the Sky">Eye in the Sky</option>
+                            <option value="Flight Plans">Flight Plans</option>
+                            <option value="Harmful Waves">Harmful Waves</option>
+                            <option value="Hunting Party">Hunting Party</option>
+                            <option value="Information Overload">Information Overload</option>
+                            <option value="Kennel">Kennel</option>
+                            <option value="Natural Treasure">Natural Treasure</option>
+                            <option value="On Rails">On Rails</option>
+                            <option value="One Man Army">One Man Army</option>
+                            <option value="Paper Shredder">Paper Shredder</option>
+                            <option value="Perfection">Perfection</option>
+                            <option value="Quick and Dirty">Quick and Dirty</option>
+                            <option value="Roof Rat">Roof Rat</option>
+                            <option value="Silent and Deadly">Silent and Deadly</option>
+                            <option value="Silent Killer">Silent Killer</option>
+                            <option value="Team Player">Team Player</option>
+                            <option value="The Client is King">The Client is King</option>
+                            <option value="The Golden Rule">The Golden Rule</option>
+                            <option value="The Whale">The Whale</option>
+                            <option value="Unarmed and Dangerous">Unarmed and Dangerous</option>
+                            <option value="Vintage Collection">Vintage Collection</option>
+                            <option value="Vintage Connoisseur">Vintage Connoisseur</option>
+                            <option value="Weapons Case">Weapons Case</option>
+                            <option value="Weapons Chase">Weapons Chase</option>
+                            <option value="Weapons Research">Weapons Research</option>
+                            <option value="Who’s Watching">Who’s Watching</option>
+                            <option value="Without a Trace">Without a Trace</option>
+                        </optgroup>
+                </select>
+                <div id="mission6" class="d-none">
+                    <div id="mission6-header" class="title">
+                        <span id="mission6-faction" class="material-symbols-rounded"></span>
+                        <span id="mission6-title"></span>
+                        <button class="close-mission" aria-label="Close Mission" title="Close Mission" onclick="closeMission6()">close</button>
+                    </div>
+                    <p id="mission6-task1" class="list"></p>
+                    <p id="mission6-task2" class="list"></p>
+                    <p id="mission6-task3" class="list"></p>
+                </div>
+            </div>
+        </div>
+        <div class="grid-element">
+            <div class="form">
+                <input type="text" class="form_input" placeholder="teammate 2">
+            </div>
+            <div  class="mission">
+                <select id="mission7-select" onchange="swapMission7(this)">
+                    <option value="null">Select Mission</option>
+                        <optgroup label="LEGION">
+                            <option value="Al-Qatala Informant">Al-Qatala Informant</option>
+                            <option value="All Clear">All Clear</option>
+                            <option value="All Fired Up">All Fired Up</option>
+                            <option value="Anti-Air">Anti-Air</option>
+                            <option value="Battle Rivals">Battle Rivals</option>
+                            <option value="Big Spender">Big Spender</option>
+                            <option value="Buried Barrels">Buried Barrels</option>
+                            <option value="Commanding Intel">Commanding Intel</option>
+                            <option value="Contractual Obligations">Contractual Obligations</option>
+                            <option value="Data Collection">Data Collection</option>
+                            <option value="Dead Drop">Dead Drop</option>
+                            <option value="Fort Scout">Fort Scout</option>
+                            <option value="Frame Job">Frame Job</option>
+                            <option value="Good Fortune">Good Fortune</option>
+                            <option value="Good Prep">Good Prep</option>
+                            <option value="Intelligence Control">Intelligence Control</option>
+                            <option value="Joy Ride">Joy Ride</option>
+                            <option value="Junker">Junker</option>
+                            <option value="Junkyard">Junkyard</option>
+                            <option value="Key Elimination">Key Elimination</option>
+                            <option value="Last Minute Evac">Last Minute Evac</option>
+                            <option value="Locate and Scavenge">Locate and Scavenge</option>
+                            <option value="Make Contact">Make Contact</option>
+                            <option value="Mechanic">Mechanic</option>
+                            <option value="Nail in the Coffin">Nail in the Coffin</option>
+                            <option value="No Rushing">No Rushing</option>
+                            <option value="Poisoned Well">Poisoned Well</option>
+                            <option value="Pyromaniac">Pyromaniac</option>
+                            <option value="Recon Flyover">Recon Flyover</option>
+                            <option value="Storm the Stronghold">Storm the Stronghold</option>
+                            <option value="Tactical Extraction">Tactical Extraction</option>
+                            <option value="Thirst For Knowledge">Thirst For Knowledge</option>
+                        </optgroup>
+                        <optgroup label="WHITE LOTUS">
+                            <option value="Air Supremacy">Air Supremacy</option>
+                            <option value="Badge of Honor">Badge of Honor</option>
+                            <option value="Bag ‘Em and Tag ‘Em">Bag ‘Em and Tag ‘Em</option>
+                            <option value="Bombing Run">Bombing Run</option>
+                            <option value="Caved In">Caved In</option>
+                            <option value="Clean House">Clean House</option>
+                            <option value="Close Quarters">Close Quarters</option>
+                            <option value="Convenience">Convenience</option>
+                            <option value="Cover No Concealment">Cover No Concealment</option>
+                            <option value="Deadlines">Deadlines</option>
+                            <option value="Death From Above">Death From Above</option>
+                            <option value="Demolitions">Demolitions</option>
+                            <option value="Fast and Strong">Fast and Strong</option>
+                            <option value="Flight Recon">Flight Recon</option>
+                            <option value="Fully Encumbered">Fully Encumbered</option>
+                            <option value="Grenade Supplier">Grenade Supplier</option>
+                            <option value="Health Conscious">Health Conscious</option>
+                            <option value="Heavy Gunner">Heavy Gunner</option>
+                            <option value="Hero Run">Hero Run</option>
+                            <option value="Hit and Run">Hit and Run</option>
+                            <option value="Hostage Rescue">Hostage Rescue</option>
+                            <option value="Humanitarian Relief">Humanitarian Relief</option>
+                            <option value="Intel Executed">Intel Executed</option>
+                            <option value="Mall Rat">Mall Rat</option>
+                            <option value="Massive Stock">Massive Stock</option>
+                            <option value="Medical Mule">Medical Mule</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Robin Hood">Robin Hood</option>
+                            <option value="Supply Drop">Supply Drop</option>
+                            <option value="The Route Forward">The Route Forward</option>
+                            <option value="Two Birds">Two Birds</option>
+                            <option value="Unearthed">Unearthed</option>
+                            <option value="Weight Limit">Weight Limit</option>
+                            <option value="World Traveler">World Traveler</option>
+                        </optgroup>
+                        <optgroup label="BLACK MOUS">
+                            <option value="Always Listening">Always Listening</option>
+                            <option value="Based">Based</option>
+                            <option value="Breaking and Entering">Breaking and Entering</option>
+                            <option value="Bullfighter">Bullfighter</option>
+                            <option value="Cargo Keeper">Cargo Keeper</option>
+                            <option value="Custom Hardware">Custom Hardware</option>
+                            <option value="Down and Out">Down and Out</option>
+                            <option value="Espionage">Espionage</option>
+                            <option value="Eye in the Sky">Eye in the Sky</option>
+                            <option value="Flight Plans">Flight Plans</option>
+                            <option value="Harmful Waves">Harmful Waves</option>
+                            <option value="Hunting Party">Hunting Party</option>
+                            <option value="Information Overload">Information Overload</option>
+                            <option value="Kennel">Kennel</option>
+                            <option value="Natural Treasure">Natural Treasure</option>
+                            <option value="On Rails">On Rails</option>
+                            <option value="One Man Army">One Man Army</option>
+                            <option value="Paper Shredder">Paper Shredder</option>
+                            <option value="Perfection">Perfection</option>
+                            <option value="Quick and Dirty">Quick and Dirty</option>
+                            <option value="Roof Rat">Roof Rat</option>
+                            <option value="Silent and Deadly">Silent and Deadly</option>
+                            <option value="Silent Killer">Silent Killer</option>
+                            <option value="Team Player">Team Player</option>
+                            <option value="The Client is King">The Client is King</option>
+                            <option value="The Golden Rule">The Golden Rule</option>
+                            <option value="The Whale">The Whale</option>
+                            <option value="Unarmed and Dangerous">Unarmed and Dangerous</option>
+                            <option value="Vintage Collection">Vintage Collection</option>
+                            <option value="Vintage Connoisseur">Vintage Connoisseur</option>
+                            <option value="Weapons Case">Weapons Case</option>
+                            <option value="Weapons Chase">Weapons Chase</option>
+                            <option value="Weapons Research">Weapons Research</option>
+                            <option value="Who’s Watching">Who’s Watching</option>
+                            <option value="Without a Trace">Without a Trace</option>
+                        </optgroup>
+                </select>
+                <div id="mission7" class="d-none">
+                    <div id="mission7-header" class="title">
+                        <span id="mission7-faction" class="material-symbols-rounded"></span>
+                        <span id="mission7-title"></span>
+                        <button class="close-mission" aria-label="Close Mission" title="Close Mission" onclick="closeMission7()">close</button>
+                    </div>
+                    <p id="mission7-task1" class="list"></p>
+                    <p id="mission7-task2" class="list"></p>
+                    <p id="mission7-task3" class="list"></p>
+                </div>
+            </div>
+            <div class="mission">
+                <select id="mission8-select" onchange="swapMission8(this)">
+                    <option value="null">Select Mission</option>
+                        <optgroup label="LEGION">
+                            <option value="Al-Qatala Informant">Al-Qatala Informant</option>
+                            <option value="All Clear">All Clear</option>
+                            <option value="All Fired Up">All Fired Up</option>
+                            <option value="Anti-Air">Anti-Air</option>
+                            <option value="Battle Rivals">Battle Rivals</option>
+                            <option value="Big Spender">Big Spender</option>
+                            <option value="Buried Barrels">Buried Barrels</option>
+                            <option value="Commanding Intel">Commanding Intel</option>
+                            <option value="Contractual Obligations">Contractual Obligations</option>
+                            <option value="Data Collection">Data Collection</option>
+                            <option value="Dead Drop">Dead Drop</option>
+                            <option value="Fort Scout">Fort Scout</option>
+                            <option value="Frame Job">Frame Job</option>
+                            <option value="Good Fortune">Good Fortune</option>
+                            <option value="Good Prep">Good Prep</option>
+                            <option value="Intelligence Control">Intelligence Control</option>
+                            <option value="Joy Ride">Joy Ride</option>
+                            <option value="Junker">Junker</option>
+                            <option value="Junkyard">Junkyard</option>
+                            <option value="Key Elimination">Key Elimination</option>
+                            <option value="Last Minute Evac">Last Minute Evac</option>
+                            <option value="Locate and Scavenge">Locate and Scavenge</option>
+                            <option value="Make Contact">Make Contact</option>
+                            <option value="Mechanic">Mechanic</option>
+                            <option value="Nail in the Coffin">Nail in the Coffin</option>
+                            <option value="No Rushing">No Rushing</option>
+                            <option value="Poisoned Well">Poisoned Well</option>
+                            <option value="Pyromaniac">Pyromaniac</option>
+                            <option value="Recon Flyover">Recon Flyover</option>
+                            <option value="Storm the Stronghold">Storm the Stronghold</option>
+                            <option value="Tactical Extraction">Tactical Extraction</option>
+                            <option value="Thirst For Knowledge">Thirst For Knowledge</option>
+                        </optgroup>
+                        <optgroup label="WHITE LOTUS">
+                            <option value="Air Supremacy">Air Supremacy</option>
+                            <option value="Badge of Honor">Badge of Honor</option>
+                            <option value="Bag ‘Em and Tag ‘Em">Bag ‘Em and Tag ‘Em</option>
+                            <option value="Bombing Run">Bombing Run</option>
+                            <option value="Caved In">Caved In</option>
+                            <option value="Clean House">Clean House</option>
+                            <option value="Close Quarters">Close Quarters</option>
+                            <option value="Convenience">Convenience</option>
+                            <option value="Cover No Concealment">Cover No Concealment</option>
+                            <option value="Deadlines">Deadlines</option>
+                            <option value="Death From Above">Death From Above</option>
+                            <option value="Demolitions">Demolitions</option>
+                            <option value="Fast and Strong">Fast and Strong</option>
+                            <option value="Flight Recon">Flight Recon</option>
+                            <option value="Fully Encumbered">Fully Encumbered</option>
+                            <option value="Grenade Supplier">Grenade Supplier</option>
+                            <option value="Health Conscious">Health Conscious</option>
+                            <option value="Heavy Gunner">Heavy Gunner</option>
+                            <option value="Hero Run">Hero Run</option>
+                            <option value="Hit and Run">Hit and Run</option>
+                            <option value="Hostage Rescue">Hostage Rescue</option>
+                            <option value="Humanitarian Relief">Humanitarian Relief</option>
+                            <option value="Intel Executed">Intel Executed</option>
+                            <option value="Mall Rat">Mall Rat</option>
+                            <option value="Massive Stock">Massive Stock</option>
+                            <option value="Medical Mule">Medical Mule</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Robin Hood">Robin Hood</option>
+                            <option value="Supply Drop">Supply Drop</option>
+                            <option value="The Route Forward">The Route Forward</option>
+                            <option value="Two Birds">Two Birds</option>
+                            <option value="Unearthed">Unearthed</option>
+                            <option value="Weight Limit">Weight Limit</option>
+                            <option value="World Traveler">World Traveler</option>
+                        </optgroup>
+                        <optgroup label="BLACK MOUS">
+                            <option value="Always Listening">Always Listening</option>
+                            <option value="Based">Based</option>
+                            <option value="Breaking and Entering">Breaking and Entering</option>
+                            <option value="Bullfighter">Bullfighter</option>
+                            <option value="Cargo Keeper">Cargo Keeper</option>
+                            <option value="Custom Hardware">Custom Hardware</option>
+                            <option value="Down and Out">Down and Out</option>
+                            <option value="Espionage">Espionage</option>
+                            <option value="Eye in the Sky">Eye in the Sky</option>
+                            <option value="Flight Plans">Flight Plans</option>
+                            <option value="Harmful Waves">Harmful Waves</option>
+                            <option value="Hunting Party">Hunting Party</option>
+                            <option value="Information Overload">Information Overload</option>
+                            <option value="Kennel">Kennel</option>
+                            <option value="Natural Treasure">Natural Treasure</option>
+                            <option value="On Rails">On Rails</option>
+                            <option value="One Man Army">One Man Army</option>
+                            <option value="Paper Shredder">Paper Shredder</option>
+                            <option value="Perfection">Perfection</option>
+                            <option value="Quick and Dirty">Quick and Dirty</option>
+                            <option value="Roof Rat">Roof Rat</option>
+                            <option value="Silent and Deadly">Silent and Deadly</option>
+                            <option value="Silent Killer">Silent Killer</option>
+                            <option value="Team Player">Team Player</option>
+                            <option value="The Client is King">The Client is King</option>
+                            <option value="The Golden Rule">The Golden Rule</option>
+                            <option value="The Whale">The Whale</option>
+                            <option value="Unarmed and Dangerous">Unarmed and Dangerous</option>
+                            <option value="Vintage Collection">Vintage Collection</option>
+                            <option value="Vintage Connoisseur">Vintage Connoisseur</option>
+                            <option value="Weapons Case">Weapons Case</option>
+                            <option value="Weapons Chase">Weapons Chase</option>
+                            <option value="Weapons Research">Weapons Research</option>
+                            <option value="Who’s Watching">Who’s Watching</option>
+                            <option value="Without a Trace">Without a Trace</option>
+                        </optgroup>
+                </select>
+                <div id="mission8" class="d-none">
+                    <div id="mission8-header" class="title">
+                        <span id="mission8-faction" class="material-symbols-rounded"></span>
+                        <span id="mission8-title"></span>
+                        <button class="close-mission" aria-label="Close Mission" title="Close Mission" onclick="closeMission8()">close</button>
+                    </div>
+                    <p id="mission8-task1" class="list"></p>
+                    <p id="mission8-task2" class="list"></p>
+                    <p id="mission8-task3" class="list"></p>
+                </div>
+            </div>
+            <div class="mission">
+                <select id="mission9-select" onchange="swapMission9(this)">
+                    <option value="null">Select Mission</option>
+                        <optgroup label="LEGION">
+                            <option value="Al-Qatala Informant">Al-Qatala Informant</option>
+                            <option value="All Clear">All Clear</option>
+                            <option value="All Fired Up">All Fired Up</option>
+                            <option value="Anti-Air">Anti-Air</option>
+                            <option value="Battle Rivals">Battle Rivals</option>
+                            <option value="Big Spender">Big Spender</option>
+                            <option value="Buried Barrels">Buried Barrels</option>
+                            <option value="Commanding Intel">Commanding Intel</option>
+                            <option value="Contractual Obligations">Contractual Obligations</option>
+                            <option value="Data Collection">Data Collection</option>
+                            <option value="Dead Drop">Dead Drop</option>
+                            <option value="Fort Scout">Fort Scout</option>
+                            <option value="Frame Job">Frame Job</option>
+                            <option value="Good Fortune">Good Fortune</option>
+                            <option value="Good Prep">Good Prep</option>
+                            <option value="Intelligence Control">Intelligence Control</option>
+                            <option value="Joy Ride">Joy Ride</option>
+                            <option value="Junker">Junker</option>
+                            <option value="Junkyard">Junkyard</option>
+                            <option value="Key Elimination">Key Elimination</option>
+                            <option value="Last Minute Evac">Last Minute Evac</option>
+                            <option value="Locate and Scavenge">Locate and Scavenge</option>
+                            <option value="Make Contact">Make Contact</option>
+                            <option value="Mechanic">Mechanic</option>
+                            <option value="Nail in the Coffin">Nail in the Coffin</option>
+                            <option value="No Rushing">No Rushing</option>
+                            <option value="Poisoned Well">Poisoned Well</option>
+                            <option value="Pyromaniac">Pyromaniac</option>
+                            <option value="Recon Flyover">Recon Flyover</option>
+                            <option value="Storm the Stronghold">Storm the Stronghold</option>
+                            <option value="Tactical Extraction">Tactical Extraction</option>
+                            <option value="Thirst For Knowledge">Thirst For Knowledge</option>
+                        </optgroup>
+                        <optgroup label="WHITE LOTUS">
+                            <option value="Air Supremacy">Air Supremacy</option>
+                            <option value="Badge of Honor">Badge of Honor</option>
+                            <option value="Bag ‘Em and Tag ‘Em">Bag ‘Em and Tag ‘Em</option>
+                            <option value="Bombing Run">Bombing Run</option>
+                            <option value="Caved In">Caved In</option>
+                            <option value="Clean House">Clean House</option>
+                            <option value="Close Quarters">Close Quarters</option>
+                            <option value="Convenience">Convenience</option>
+                            <option value="Cover No Concealment">Cover No Concealment</option>
+                            <option value="Deadlines">Deadlines</option>
+                            <option value="Death From Above">Death From Above</option>
+                            <option value="Demolitions">Demolitions</option>
+                            <option value="Fast and Strong">Fast and Strong</option>
+                            <option value="Flight Recon">Flight Recon</option>
+                            <option value="Fully Encumbered">Fully Encumbered</option>
+                            <option value="Grenade Supplier">Grenade Supplier</option>
+                            <option value="Health Conscious">Health Conscious</option>
+                            <option value="Heavy Gunner">Heavy Gunner</option>
+                            <option value="Hero Run">Hero Run</option>
+                            <option value="Hit and Run">Hit and Run</option>
+                            <option value="Hostage Rescue">Hostage Rescue</option>
+                            <option value="Humanitarian Relief">Humanitarian Relief</option>
+                            <option value="Intel Executed">Intel Executed</option>
+                            <option value="Mall Rat">Mall Rat</option>
+                            <option value="Massive Stock">Massive Stock</option>
+                            <option value="Medical Mule">Medical Mule</option>
+                            <option value="Omnivore">Omnivore</option>
+                            <option value="Pathfinder">Pathfinder</option>
+                            <option value="Robin Hood">Robin Hood</option>
+                            <option value="Supply Drop">Supply Drop</option>
+                            <option value="The Route Forward">The Route Forward</option>
+                            <option value="Two Birds">Two Birds</option>
+                            <option value="Unearthed">Unearthed</option>
+                            <option value="Weight Limit">Weight Limit</option>
+                            <option value="World Traveler">World Traveler</option>
+                        </optgroup>
+                        <optgroup label="BLACK MOUS">
+                            <option value="Always Listening">Always Listening</option>
+                            <option value="Based">Based</option>
+                            <option value="Breaking and Entering">Breaking and Entering</option>
+                            <option value="Bullfighter">Bullfighter</option>
+                            <option value="Cargo Keeper">Cargo Keeper</option>
+                            <option value="Custom Hardware">Custom Hardware</option>
+                            <option value="Down and Out">Down and Out</option>
+                            <option value="Espionage">Espionage</option>
+                            <option value="Eye in the Sky">Eye in the Sky</option>
+                            <option value="Flight Plans">Flight Plans</option>
+                            <option value="Harmful Waves">Harmful Waves</option>
+                            <option value="Hunting Party">Hunting Party</option>
+                            <option value="Information Overload">Information Overload</option>
+                            <option value="Kennel">Kennel</option>
+                            <option value="Natural Treasure">Natural Treasure</option>
+                            <option value="On Rails">On Rails</option>
+                            <option value="One Man Army">One Man Army</option>
+                            <option value="Paper Shredder">Paper Shredder</option>
+                            <option value="Perfection">Perfection</option>
+                            <option value="Quick and Dirty">Quick and Dirty</option>
+                            <option value="Roof Rat">Roof Rat</option>
+                            <option value="Silent and Deadly">Silent and Deadly</option>
+                            <option value="Silent Killer">Silent Killer</option>
+                            <option value="Team Player">Team Player</option>
+                            <option value="The Client is King">The Client is King</option>
+                            <option value="The Golden Rule">The Golden Rule</option>
+                            <option value="The Whale">The Whale</option>
+                            <option value="Unarmed and Dangerous">Unarmed and Dangerous</option>
+                            <option value="Vintage Collection">Vintage Collection</option>
+                            <option value="Vintage Connoisseur">Vintage Connoisseur</option>
+                            <option value="Weapons Case">Weapons Case</option>
+                            <option value="Weapons Chase">Weapons Chase</option>
+                            <option value="Weapons Research">Weapons Research</option>
+                            <option value="Who’s Watching">Who’s Watching</option>
+                            <option value="Without a Trace">Without a Trace</option>
+                        </optgroup>
+                </select>
+                <div id="mission9" class="d-none">
+                    <div id="mission9-header" class="title">
+                        <span id="mission9-faction" class="material-symbols-rounded"></span>
+                        <span id="mission9-title"></span>
+                        <button class="close-mission" aria-label="Close Mission" title="Close Mission" onclick="closeMission9()">close</button>
+                    </div>
+                    <p id="mission9-task1" class="list"></p>
+                    <p id="mission9-task2" class="list"></p>
+                    <p id="mission9-task3" class="list"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-container">
+                <button onclick="document.getElementById('aboutModal').style.display='none'"
+      class="close-mission">close</button>
+      <div class="about-header">ABOUT</div>
+       <span class="lastupdate">Last updated:01.06.2023<br /> Version: 1.0</span>
+
+      <h2>If you're not for the boys, you're against them.</h2>
+                <p>So let me explain... its like pressing <mark>Y</mark></p>
+                <p>After the launch of WZ DMZ the squad quickly became pretty about DMZ. One of the biggest frustrations was waiting until we got into the game to figure out what the objectives were for each other. Along dealing with scrolling text, what gun + attachment we needed, etc. We wanted to help each other out. Ideally throw this up on a side monitor have your teammate tell you their missions and help them out.</p>
+                <p>I’ll be honest it’s a pretty simple site with static content, and really spawned out of a refresher for myself on JavaScript. I hope to maintain it as the DMZ grows with new missions. Let me know if you see bugs or come across errors.</p>
+                <p>GG EZ</p>
+                <a href="https://twitter.com/iamxthreetwo">@xthreetwo</a>
+
+            <h4>SPECIAL THANKS</h4>
+            <a href="https://www.reddit.com/user/ninja2233">u/Ninja2233</a> for Building 21 Map
+            </div>
+        </div>
+    </div>
+    <div id="b21Modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-container">
+                <button onclick="document.getElementById('b21Modal').style.display='none'"
+      class="close-mission">close</button>
+      <div class="about-header">BUILDING 21 MAP</div>
+       <span class="lastupdate">Last updated:01.06.2022<br /> Version: 1.0</span>
+       <br />
+      <img src="img/Building21-u_frozen.png" alt="Building 21 by u/Frozen" class="img" width="100%" height="750">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
