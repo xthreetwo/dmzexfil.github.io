@@ -7,7 +7,7 @@ const data = {
     "null": {
 },
 "Al-Qatala Informant": {
-faction: "sports_motorsports",
+faction: "&#ea2d",
 title: "Al-Qatala Informant",
 task1: "Activate <mark>1</mark> UAV Tower",
 
