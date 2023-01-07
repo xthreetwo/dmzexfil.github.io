@@ -148,7 +148,14 @@ option {
 .d-none {
     display: none;
 }
-
+button {
+        font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    text-align: center;
+    text-decoration: none;
+}
 .close-mission {
     float: right;
     font-family: 'Material Icons';
@@ -161,7 +168,7 @@ option {
     color: var(--text);
     border: 1px var(--primary1) solid;
     border-radius: 5px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 /*
