@@ -108,7 +108,7 @@ task2: "Loot and extract the golden .50 GS from Room 302 in the Sawah Hotel",
 faction: "sports_motorsports",
 title: "Good Prep",
 task1: "Deliver <mark>90</mark> Gas Masks to any Dumpster Dead Drop",
-
+task2: "Extract <mark>100</mark> Radiation Blockers",
 
 },
 "Intelligence Control": {
